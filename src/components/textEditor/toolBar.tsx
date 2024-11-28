@@ -100,7 +100,7 @@ export default function ToolBar({ editor }: { editor: Editor }) {
             color: 'green',
           })
           .run(),
-      preesed: editor.isActive('highlight', { color: 'green' }),
+      preesed: editor.isActive('highlight'),
     },
     {
       icon: <Highlighter className="size-4 text-red-500" />,
@@ -112,7 +112,12 @@ export default function ToolBar({ editor }: { editor: Editor }) {
             color: 'red',
           })
           .run(),
-      preesed: editor.isActive('highlight', { color: 'red' }),
+      preesed: editor.isActive('highlight'),
+    },
+    {
+      icon: <Highlighter className="size-4 text-yellow-500" />,
+      onClick: () => editor.chain().focus().toggleHighlight().run(),
+      preesed: editor.isActive('highlight'),
     },
     {
       icon: <Upload className="size-4" />,
